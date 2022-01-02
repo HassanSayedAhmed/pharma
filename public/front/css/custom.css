@@ -1,0 +1,269 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Handling Updates
+-----------------------------------------------------------------*/
+/* Main page editing  */
+
+.about-us-ext {
+	margin: 40px auto;
+}
+
+.xon
+{
+	margin: 15px 0px 5px;
+}
+
+.testi-content p {
+	min-height: 100px;
+}
+.content-wrap {
+	padding: 20px 0px 40px;
+}
+#events {
+	padding: 40px 0px;
+
+}
+
+.top-bar-fix {
+	max-width: 100vw;
+	padding: 0px;
+	margin: 0px 5px;
+}
+.top-bar-fix div {
+	padding: 0px;
+	margin-right: 5px;
+}
+
+.fbox-content-fix h4 {
+	margin: 0px auto;
+	padding: 15px 5px;
+}
+.fbox-color-aboutus i {
+	background-color: #333;
+}
+.fbox-color-aboutus a i:hover,
+.fbox-color-aboutus a:hover i,
+.fbox-color-aboutus:hover a i {
+	background-color: #203e7b!important;
+}
+.uHavetoHide {
+	display: none;
+}
+
+.counter-fix i,
+.counter-fix span {
+ font-size: 35px!important;
+}
+.counter-fix {
+	padding-top: 0px; padding-bottom: 0px;
+}
+#events {
+	padding-top: 0px;
+}
+/*contact us page */
+
+.pg-title-fix {
+	padding: 3rem 0rem !important;	
+}
+.fbox-fix-CS {
+	height: 90%;
+}
+
+.fbox-fix-CS a:hover {
+	color: darkblue;
+	font-weight: bold;
+}
+
+
+								/* new site */ 
+
+								/* global */
+
+.unique-btn:hover {
+	background-color: #ed2f2a!important;
+	border: none;
+	color: white;
+}
+
+.unique-btn2:hover {
+	background-color: #000046!important;
+	border: none;
+	color: white;
+}
+
+											/* home page */
+
+/* about us */
+
+.fbox-effect .fbox-icon i {
+	background-color: #000046;
+}
+
+.fbox-color-aboutus a i:hover,
+.fbox-color-aboutus a:hover i,
+.fbox-color-aboutus:hover a i {
+	background-color: #ed2f2a!important;
+}
+
+.fbox-effect .fbox-icon i::after {
+	box-shadow: 0 0 0 2px #ed2f2a;
+
+}
+
+
+/* counter */ 
+
+.counter-fix {
+	background-color: #000046!important;
+}
+
+.counter-fix i {
+	color: white;
+}
+
+.counter-fix h5 {
+	color: white;
+}
+
+/* products */ 
+
+.btn-infoss {
+	color: white;
+    background-color: #000046;
+    border-color: #000046;
+}
+
+.btn-dangerss {
+	color: white;
+    background-color: #ed2f2a;
+    border-color: #ed2f2a;
+}
+
+.owl-item .entry {
+	padding: 20px;
+}
+
+.owl-item .entry .grid-inner {
+	box-shadow: 0px 0px 6px 1px lightsteelblue;
+	border-radius: 25px;
+	padding: 0.5rem!important;
+}
+.owl-item .entry .grid-inner img {
+	width: 100px;
+	height: 100px;
+	margin: 0px auto;
+}
+
+.owl-item .entry .grid-inner .entry-content {
+	display: flex;
+    justify-content: space-around;
+}
+
+/* testimonials */
+
+.testimonials-edit- {
+	background-color: #000046!important;
+}
+.testimonials-edit- .testimonial {
+	background-color: #000046!important;
+}
+.testimonials-edit- .testimonial h3 {
+	color: white!important;
+}
+.testimonials-edit- .testimonial p {
+	color: white!important;
+}
+.testimonials-edit- .testimonial .xon{
+	color: #ed2f2a!important;
+}
+.testimonials-edit- .testimonial ol li a{
+	background-color: white!important;
+}
+
+
+
+/* footer */ 
+#footer {
+	background-color: #000046!important;
+}
+
+#footer span strong {
+	color: #ed2f2a
+}
+
+                                         /* contact us */ 
+.fbox-content span a:hover {
+	color: #ed2f2a
+
+}
+
+										/* Products */ 
+#shop .oc-item{
+	margin-top: 20px;
+}
+
+#shop .oc-item .entry .grid-inner .entry-content {
+	display: flex;
+    justify-content: space-around;
+}
+
+#shop .oc-item .grid-inner {
+	border-radius: 25px;
+}
+
+#shop .oc-item .grid-inner img {
+	width: 100px;
+	height: 100px;
+	margin: 0px auto;
+}
+
+									/* single blog */
+
+.single-post .entry-content .entry-image.img-full {
+	max-width: none;
+}
+
+									/* careers */ 
+
+.careers-card {
+	border-radius: 25px;
+	border: 1px solid lightsteelblue;
+	box-shadow: 0px 0px 6px 1px lightsteelblue;
+	padding: 5px 0px 10px;
+	margin: auto 10px;
+}
+.careers-card.col-lg-4{
+	margin: auto 1.5%;
+	width: 30%;
+}
+.careers-card .card-content-edit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.careers-card .card-content-edit h3 {
+	margin: 5px 0px;
+	color: grey;
+	font-weight: bolder;
+}
+
+.careers-card button {
+	border-radius: 25px;
+	padding: 3px 12px;
+	margin: 10px auto;
+	display: block;
+	color: white;
+	background-color: #000046;
+	border: none;
+}
+.careers-card button a {
+text-decoration: none;
+color: white;
+}
+
+.careers-card button:hover {
+	color: white;
+	background-color: #ed2f2a;
+}
