@@ -15,10 +15,19 @@ class HomeController extends Controller
     {
         return view('front.home.index');
     }
+    public function indexAr()
+    {
+        return view('front.home.index_ar');
+    }
 
     public function aboutus()
     {
         return view('front.home.aboutus');
+    }
+
+    public function aboutusAr()
+    {
+        return view('front.home.aboutus_ar');
     }
 
     public function products()

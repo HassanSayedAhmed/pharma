@@ -39,7 +39,11 @@ Route::get('/Contact/Index','ContactController@index')->name('contact_index');
 
 //Front End Routes
 Route::get('/','HomeController@index')->name('front_index');
+Route::get('/ar','HomeController@indexAr')->name('front_index_ar');
+
 Route::get('/aboutus','HomeController@aboutus')->name('front_about_us');
+Route::get('/ar/aboutus','HomeController@aboutusAr')->name('front_about_us_ar');
+
 Route::get('/products','HomeController@products')->name('front_products');
 Route::get('/blogs','HomeController@blogs')->name('front_blogs');
 Route::get('/covid19','HomeController@covid')->name('front_covid_19');
@@ -48,5 +52,6 @@ Route::get('/careers/apply/{id?}','HomeController@careersApply')->name('front_ca
 Route::get('/contactus','HomeController@contactus')->name('front_contactus');
 Route::get('/careers/apply/{id?}','HomeController@careersApply')->name('front_apply_career');
 Route::post('/careers/apply/to/job','HomeController@careersApplyToJob')->name('front_apply_to_job');
+
 
 

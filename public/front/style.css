@@ -3114,6 +3114,13 @@ html[xmlns] .slider-wrap {
 	-webkit-transition: all .4s ease;
 	transition: all .4s ease;
 }
+#top-social li a:hover .ts-text-ar {
+	max-width: 200px;
+	padding-left: 12px;
+	padding-right: 0px;
+	-webkit-transition: all .4s ease;
+	transition: all .4s ease;
+}
 
 
 /* Top Login
@@ -3173,6 +3180,7 @@ html[xmlns] .slider-wrap {
 	align-items: center;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 @media (min-width: 992px) {
@@ -3409,7 +3417,6 @@ html[xmlns] .slider-wrap {
 	display: flex;
 	align-items: center;
 	-ms-flex-align: center;
-	margin-right: auto;
 	max-height: 100%;
 }
 
