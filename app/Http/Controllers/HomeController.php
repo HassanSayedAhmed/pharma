@@ -37,10 +37,23 @@ class HomeController extends Controller
         return view('front.home.products',compact('products','categories'));
     }
 
+    public function productsAr()
+    {
+        $products = product::get();
+        $categories = category::get();
+        return view('front.home.products_ar',compact('products','categories'));
+    }
+
     public function blogs()
     {
         $blogs = blog::get();
         return view('front.home.blogs',compact('blogs'));
+    }
+
+    public function blogsAr()
+    {
+        $blogs = blog::get();
+        return view('front.home.blogs_ar',compact('blogs'));
     }
 
     public function covid()
@@ -49,16 +62,34 @@ class HomeController extends Controller
         return view('front.home.covid',compact('products'));
     }
 
+    public function covidAr()
+    {
+        $products = product::where('type',product::COVID)->get();
+        return view('front.home.covid_ar',compact('products'));
+    }
+
     public function careers()
     {
         $jobs = job::get();
         return view('front.home.careers',compact('jobs'));
     }
 
+    public function careersAr()
+    {
+        $jobs = job::get();
+        return view('front.home.careers_ar',compact('jobs'));
+    }
+
     public function careersApply($id)
     {
         $job = job::find($id);
         return view('front.home.careersApply',compact('job'));
+    }
+
+    public function careersApplyAr($id)
+    {
+        $job = job::find($id);
+        return view('front.home.careersApply_ar',compact('job'));
     }
 
     public function careersApplyToJob(Request $request)
@@ -70,6 +101,11 @@ class HomeController extends Controller
     public function contactus()
     {
         return view('front.home.contactus');
+    }
+
+    public function contactusAr()
+    {
+        return view('front.home.contactus_ar');
     }
    
 }

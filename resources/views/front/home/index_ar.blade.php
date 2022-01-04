@@ -120,8 +120,8 @@
 			<!-- Logo
 			============================================= -->
 			<div id="logo">
-				<a href="{{route('front_index')}}" class="standard-logo" data-dark-logo="images/logo-dark.png">المعمل الدوائي</a>
-				<a href="{{route('front_index')}}" class="retina-logo" data-dark-logo="images/logo-dark@2x.png">المعمل الدوائي</a>
+				<a href="{{route('front_index_ar')}}" class="standard-logo" data-dark-logo="images/logo-dark.png">المعمل الدوائي</a>
+				<a href="{{route('front_index_ar')}}" class="retina-logo" data-dark-logo="images/logo-dark@2x.png">المعمل الدوائي</a>
 			</div><!-- #logo end -->
 			
 			<div id="primary-menu-trigger">
@@ -134,30 +134,30 @@
 
 				<ul class="menu-container">
 					<li class="menu-item">
-						<a class="menu-link" href="{{route('front_index')}}"><div>الرئيسية</div></a>
+						<a class="menu-link" href="{{route('front_index_ar')}}"><div>الرئيسية</div></a>
 					</li>
 					<li class="menu-item">
-						<a class="menu-link" href="{{route('front_about_us')}}"><div>معلومات عنا</div></a>
+						<a class="menu-link" href="{{route('front_about_us_ar')}}"><div>معلومات عنا</div></a>
 					</li>
 
 					<li class="menu-item mega-menu">
-						<a class="menu-link" href="{{route('front_products')}}"><div>المنتجات</div></a>
+						<a class="menu-link" href="{{route('front_products_ar')}}"><div>المنتجات</div></a>
 					</li>
 					
 					<li class="menu-item mega-menu">
-						<a class="menu-link" href="{{route('front_blogs')}}"><div>المقالات</div></a>
+						<a class="menu-link" href="{{route('front_blogs_ar')}}"><div>المقالات</div></a>
 					</li>
 				
 					<li class="menu-item mega-menu">
-						<a class="menu-link" href="{{route('front_covid_19')}}"><div>كوفيد-19</div></a>
+						<a class="menu-link" href="{{route('front_covid_19_ar')}}"><div>كوفيد-19</div></a>
 					</li>
 
 					<li class="menu-item mega-menu">
-						<a class="menu-link" href="{{route('front_careers')}}"><div>الوظائف</div></a>
+						<a class="menu-link" href="{{route('front_careers_ar')}}"><div>الوظائف</div></a>
 					</li>
 
 					<li class="menu-item mega-menu">
-						<a class="menu-link" href="{{route('front_contactus')}}"><div>اتصل بنا</div></a>
+						<a class="menu-link" href="{{route('front_contactus_ar')}}"><div>اتصل بنا</div></a>
 					</li>
 				</ul>
 
