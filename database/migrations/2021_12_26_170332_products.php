@@ -16,9 +16,10 @@ class Products extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image')->nullable();;
-            $table->integer('type')->nullable();;
-            $table->integer('category_id');
+            $table->string('image')->nullable();
+            $table->integer('type')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->integer('sub_category_id')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('active')->nullable();
             $table->timestamps();

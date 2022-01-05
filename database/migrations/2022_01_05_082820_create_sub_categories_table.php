@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateJobsTabls extends Migration
+class CreateSubCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class UpdateJobsTabls extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('jobs');
-        Schema::create('jobs', function (Blueprint $table) {
+        Schema::create('sub_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description');
-            $table->string('what_you_have_got');
+            $table->string('name');
+            $table->string('image')->nullable();
+            $table->integer('category_id');
+            $table->integer('created_by')->nullable();
+            $table->integer('active')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class UpdateJobsTabls extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jobs');
+        Schema::dropIfExists('sub_categories');
     }
 }
