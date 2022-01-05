@@ -3121,6 +3121,24 @@ html[xmlns] .slider-wrap {
 	-webkit-transition: all .4s ease;
 	transition: all .4s ease;
 }
+#top-social .lang-switch {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#top-social .lang-switch:hover {
+	background-color: transparent!important;
+}
+.dark #top-social .lang-switch a:hover {
+	color: white!important;
+}
+#top-social .lang-switch a:hover {
+	color: black!important;
+}
+#top-social .lang-switch a
+{
+	padding: 0px 2px;
+}
 
 
 /* Top Login

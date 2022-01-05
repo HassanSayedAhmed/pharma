@@ -47,12 +47,12 @@
 						============================================= -->
 						
 							<ul id="top-social" class="lefty">
-								<li class="nav-item dropdown">
-									<a class="dropdown-item text-black" id="index_en" href="javascript:void(0)">
-										<img src="https://wq3.com/uploads/language-icons/16327053281384740823.png"> English
+							<li class="lang-switch">
+									<a  id="index_en" href="javascript:void(0)">
+										<img src="https://wq3.com/uploads/language-icons/16327053281384740823.png"> En
 									</a>
-									<a class="dropdown-item text-black" id="index_ar" href="javascript:void(0)">
-										<img src="https://wq3.com/uploads/language-icons/1632078760571914258.png"> Arabic
+									<a  id="index_ar" href="javascript:void(0)">
+										<img src="https://wq3.com/uploads/language-icons/1632078760571914258.png"> Ar
 									</a>				
 								</li>
 								<li><a href="tel:+201200007010" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+201200007010</span></a></li>
