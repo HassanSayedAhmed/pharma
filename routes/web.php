@@ -41,26 +41,26 @@ Route::get('/Contact/Index','ContactController@index')->name('contact_index');
 Route::get('/','HomeController@index')->name('front_index');
 Route::get('/ar','HomeController@indexAr')->name('front_index_ar');
 
-Route::get('/aboutus','HomeController@aboutus')->name('front_about_us');
+Route::get('/en/aboutus','HomeController@aboutus')->name('front_about_us');
 Route::get('/ar/aboutus','HomeController@aboutusAr')->name('front_about_us_ar');
 
-Route::get('/products','HomeController@products')->name('front_products');
+Route::get('/en/products','HomeController@products')->name('front_products');
 Route::get('/ar/products','HomeController@productsAr')->name('front_products_ar');
 
-Route::get('/blogs','HomeController@blogs')->name('front_blogs');
+Route::get('/en/blogs','HomeController@blogs')->name('front_blogs');
 Route::get('/ar/blogs','HomeController@blogsAr')->name('front_blogs_ar');
 
-Route::get('/covid19','HomeController@covid')->name('front_covid_19');
+Route::get('/en/covid19','HomeController@covid')->name('front_covid_19');
 Route::get('/ar/covid19','HomeController@covidAr')->name('front_covid_19_ar');
 
-Route::get('/careers','HomeController@careers')->name('front_careers');
+Route::get('/en/careers','HomeController@careers')->name('front_careers');
 Route::get('/ar/careers','HomeController@careersAr')->name('front_careers_ar');
 
-Route::get('/careers/apply/{id?}','HomeController@careersApply')->name('front_careers_apply');
+Route::get('/en/careers/apply/{id?}','HomeController@careersApply')->name('front_careers_apply');
 Route::get('/ar/careers/apply/{id?}','HomeController@careersApplyAr')->name('front_careers_apply_ar');
 
 
-Route::get('/contactus','HomeController@contactus')->name('front_contactus');
+Route::get('/en/contactus','HomeController@contactus')->name('front_contactus');
 Route::get('/ar/contactus','HomeController@contactusAr')->name('front_contactus_ar');
 
 Route::get('/careers/apply/{id?}','HomeController@careersApply')->name('front_apply_career');

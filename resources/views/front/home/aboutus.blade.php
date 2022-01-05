@@ -48,10 +48,17 @@
 						============================================= -->
 						
 							<ul id="top-social" class="lefty">
-								
-							<li><a href="tel:+201200007010" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+201200007010</span></a></li>
-							<li><a href="#" class="si-email"><span class="ts-icon"><i class="icon-line-heart"></i></span><span class="ts-text">Follow Us</span></a></li>
-							<li><a href="mailto:HR@Mashpremiere.net" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">HR@Mashpremiere.net</span></a></li>
+								<li class="nav-item dropdown">
+									<a class="dropdown-item text-black" id="index_en" href="javascript:void(0)">
+										<img src="https://wq3.com/uploads/language-icons/16327053281384740823.png"> English
+									</a>
+									<a class="dropdown-item text-black" id="index_ar" href="javascript:void(0)">
+										<img src="https://wq3.com/uploads/language-icons/1632078760571914258.png"> Arabic
+									</a>				
+								</li>
+								<li><a href="tel:+201200007010" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+201200007010</span></a></li>
+								<li><a href="#" class="si-email"><span class="ts-icon"><i class="icon-line-heart"></i></span><span class="ts-text">Follow Us</span></a></li>
+								<li><a href="mailto:HR@Mashpremiere.net" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">HR@Mashpremiere.net</span></a></li>
 							</ul>
 						<!-- .top-links end -->
 
@@ -599,6 +606,22 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="{{asset('front/js/functions.js')}}"></script>
+	<script>
+		$(document).on('click', '#index_ar', function(){
+			// console.log("Output;");  
+			// console.log(location.hostname);
+			// console.log(document.domain);
+			// alert(window.location.hostname)
+
+			 //console.log("document.URL : "+document.URL);
+			// console.log("document.location.href : "+document.location.href);
+			// console.log("document.location.origin : "+document.location.origin);
+			// console.log("document.location.hostname : "+document.location.hostname);
+			// console.log("document.location.host : "+document.location.host);
+			// console.log("document.location.pathname : "+document.location.pathname);
+			window.location.href = document.location.origin + document.location.pathname.replace('en','ar')
+		})
+	</script>
 </body>
 </html>
 
