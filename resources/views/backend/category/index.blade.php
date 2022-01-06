@@ -18,6 +18,7 @@
                 </div>
                 <div class='modal-body'>
                     <input type="hidden" id="id" name="id" value="0"/>
+                    <input type="hidden" id="parent_id" name="parent_id" value="0"/>
                     <div class="form-group">
                         <label>Name</label>
                         <input required type="text" class="form-control" id="name" name="name" title="Name" placeholder="Name">
@@ -26,6 +27,7 @@
                         <label>Image</label>
                         <input type="file" class="form-control" id="image" name="image" title="Name" placeholder="Name">
                     </div>
+                    
                 </div>
                 <div>
                     <div id='progress_bar' style="background-color: green; width: 0%; height: 2px;"></div>
@@ -50,6 +52,7 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
+                    <th>Sub Category</th>
                     <th>Active</th>
                     <th class="no-content"></th>
                 </tr>
@@ -76,6 +79,20 @@
                     "columns": [
                         { "data": "id", "name": "id"},
                         { "data": "name", "name": "name"},
+                        { "data": "subCategory", "name": "subCategory" ,
+                            fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
+                                var html = '';
+
+                               oData.subCategory.forEach(function(value) {
+                                    console.log(value)
+                                    html += value.name + '&nbsp;';
+                                    html += "<a title='Edit Sub Category' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' class='editSub'><i class='fa fa-edit'></i></a>&nbsp;|&nbsp;";
+                                    html += "<a title='Delete Sub Category' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' class='deleteSub'><i class='fa fa-trash'></i></a>";
+                                    html += "<br>";
+                               });
+                                $(nTd).html(html);
+                            }
+                        },
                         { "data": "active", "name": "active" ,
                             fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
                                 var html = '';
@@ -89,7 +106,8 @@
                         { "data": "id", "name": "id",
                             fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
                                 var html = "";
-                                html += "<a title='Edit' href='javascript:void(0)' class='edit'><i class='fa fa-edit'></i></a>&nbsp;";
+                                html += "<a title='Add Sub Category' href='javascript:void(0)' class='addSub'><i class='fa fa-plus'></i></a>&nbsp;|&nbsp;";
+                                html += "<a title='Edit' href='javascript:void(0)' class='edit'><i class='fa fa-edit'></i></a>&nbsp;|&nbsp;";
                                 html += "<a title='Delete' href='javascript:void(0)' class='delete'><i class='fa fa-trash'></i></a>";
                                 $(nTd).html("<span class='action-column'>"+html+"</span>");
                             }
@@ -178,6 +196,76 @@
                     });
                 });
             });
+
+            $(document).on("click", ".addSub", function () {
+
+                var data = table.row($(this).closest('tr')).data();
+                var modal = $('#manage_category_modal').clone();
+                var action = '{{route('save_sub_category')}}';
+                modal.find('form').attr('action', action);
+                modal.find('#modal_title').text('Add Sub Category');
+                modal.execModal({
+                    progressBar: 'progress_bar',
+                    progressText: 'progress_text',
+                }, function (response) {
+                    //console.log(response);
+                    table.draw();
+
+                }, function (response) {
+
+                }, function (dialog) {
+                    dialog.find('#parent_id').val(data.id)
+                });
+
+            });
+            $(document).on("click", ".editSub", function () {
+
+                var data = table.row($(this).closest('tr')).data();
+                var id = $(this).attr('data-id');
+                var name = $(this).attr('data-name');
+                var modal = $('#manage_category_modal').clone();
+                var action = '{{route('save_sub_category')}}';
+                modal.find('form').attr('action', action);
+                modal.find('#modal_title').text('Edit Category');
+                modal.execModal({
+                    progressBar: 'progress_bar',
+                    progressText: 'progress_text',
+                }, function (response) {
+                        table.draw();
+
+                }, function (response) {
+
+                }, function (dialog) {
+                        dialog.find('#id').val(id);
+                        dialog.find('#name').val(name);
+                        dialog.find('#parent_id').val(data.id)
+
+                });
+            });
+
+            $(document).on("click", ".deleteSub", function () {
+
+                var id = $(this).attr('data-id');
+                var name = $(this).attr('data-name');
+                var url = '{{route('delete_category',['id'=>'#id'])}}';
+                url = url.replace('#id',id);
+
+                warningBox("Are you sure to delete" + name +"</b>?", function () {
+                    $.ajax({
+                        type: "GET",
+                        url: url,
+                        contentType: "application/json; charset=utf-8",
+                        datatype: "json",
+                        success: function (data) {
+                            table.draw();
+                        },
+                        error: function () {
+                            alert("Dynamic content load failed.");
+                        }
+                    });
+                });
+            });
+
 		});	
    </script> 
 @endsection

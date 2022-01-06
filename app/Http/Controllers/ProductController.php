@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use App\category;
 use App\product;
+use App\SubCategory;
 
 class ProductController extends Controller
 {
@@ -53,7 +54,19 @@ class ProductController extends Controller
             return $result;
         }
 
-        $categories = category::pluck('name', 'id')->toArray();
+        //$categories = category::pluck('name', 'id')->orderBy('id')->toArray();
+        $categories = Category::select('id','name','description','image','parent_id','active')
+            ->where('parent_id', null)->orderBy('id', 'desc');
+          
+        $categories = $categories->paginate(Category::where('parent_id', null)->count('id'));
+      
+        $categories->getCollection()->transform(function ($value) {
+            
+            $value->subCategory = Category::where('parent_id',$value->id)->get();
+
+            return $value;
+        });
+      
         return view('backend.product.index', compact('categories'));
     }
 
@@ -64,7 +77,6 @@ class ProductController extends Controller
             $product = new product();
             $product->name = $request->name;
             $product->active = product::ACTIVE;
-            $product->type = $request->type;
             $product->category_id = $request->category_id;
             if($request->has('image')){
                 $file = $request->file('image');

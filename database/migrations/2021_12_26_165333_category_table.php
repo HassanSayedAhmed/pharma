@@ -16,10 +16,13 @@ class CategoryTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('description')->nullable();
             $table->string('image')->nullable();
+            $table->integer('parent_id')->nullable();
+            $table->integer('type')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('active')->nullable();
-            $table->timestamps(); 
+            $table->timestamps();
         });
     }
 

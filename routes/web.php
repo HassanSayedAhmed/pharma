@@ -21,10 +21,10 @@ Route::get('/Dashboard/Index','DashboardController@index')->name('dashboard_inde
 
 Route::get('/Category/Index','CategoryController@index')->name('category_index');
 Route::post('/Category/Save','CategoryController@save')->name('save_category');
+Route::post('/Sub/Category/Save','CategoryController@saveSub')->name('save_sub_category');
 Route::get('/Category/delete/{id?}','CategoryController@delete')->name('delete_category');
 
 Route::get('/Sub/Category/Index','SubCategoryController@index')->name('sub_category_index');
-Route::post('/Sub/Category/Save','SubCategoryController@save')->name('save_sub_category');
 Route::get('/Sub/Category/delete/{id?}','SubCategoryController@delete')->name('delete_sub_category');
 
 Route::get('/Product/Index','ProductController@index')->name('product_index');

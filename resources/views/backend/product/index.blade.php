@@ -28,7 +28,16 @@
                     </div>
                     <div class="form-group">
                         <label>Category</label>
-                        {!! Form::select('category_id', array(""=>__("Select Category"))+$categories, null, array('id'=> 'category_id', 'title'=> 'Category', 'class'=>'form-control')) !!}
+                        {{-- {!! Form::select('category_id', array(""=>__("Select Category"))+$categories, null, array('id'=> 'category_id', 'title'=> 'Category', 'class'=>'form-control')) !!} --}}
+                        <select  name="category_id" id="category_id" title='Category' class='form-control'>
+                            @foreach ($categories as $category)
+                            <optgroup label="{{$category->name}}">
+                                @foreach ($category->subCategory as $sub)
+                                    <option value="{{$sub->id}}">{{$sub->name}}</option>
+                                @endforeach
+                              </optgroup>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Covid</label>
