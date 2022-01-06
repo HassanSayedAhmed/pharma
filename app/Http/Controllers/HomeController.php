@@ -89,6 +89,20 @@ class HomeController extends Controller
         return view('front.home.blogs_ar',compact('blogs'));
     }
 
+    public function blogDetail(Blog $blog)
+    {   
+        $relatedBlogs = blog::where('id','!=',$blog->id)->get();
+
+        return view('front.home.blog_detail',compact('blog','relatedBlogs'));
+    }
+
+    public function blogDetailAr(Blog $blog)
+    {
+        $relatedBlogs = blog::where('id','!=',$blog->id)->get();
+
+        return view('front.home.blog_detail_ar',compact('blog','relatedBlogs'));
+    }
+
     public function covid()
     {
         $products = product::where('type',product::COVID)->get();

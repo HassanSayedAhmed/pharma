@@ -54,6 +54,9 @@ Route::get('/ar/products/{category?}','HomeController@productsAr')->name('front_
 Route::get('/en/blogs','HomeController@blogs')->name('front_blogs');
 Route::get('/ar/blogs','HomeController@blogsAr')->name('front_blogs_ar');
 
+Route::get('/en/blog/detail/{blog}','HomeController@blogDetail')->name('front_blog_detail');
+Route::get('/ar/blog/detail/{blog}','HomeController@blogDetailAr')->name('front_blog_detail_ar');
+
 Route::get('/en/covid19','HomeController@covid')->name('front_covid_19');
 Route::get('/ar/covid19','HomeController@covidAr')->name('front_covid_19_ar');
 

@@ -29,13 +29,13 @@
                         <div class="grid-inner">
                             <div class="entry-image">
                                 @if($blog->image != null)
-                                    <a href="#" data-lightbox="image"><img src="{{$blog->image}}" alt="Standard Post with Image"></a>
+                                    <a href="{{route('front_blog_detail',['blog'=>$blog->id])}}" data-lightbox="image"><img src="{{$blog->image}}" alt="Standard Post with Image"></a>
                                 @else
-                                    <a href="#" data-lightbox="image"><img src="{{asset('uploads/defaults/blog/defualt_blog.jpg')}}" alt="Standard Post with Image"></a>
+                                    <a href="{{route('front_blog_detail',['blog'=>$blog->id])}}" data-lightbox="image"><img src="{{asset('/uploads/defaults/defualt_blog.jpg')}}" alt="Standard Post with Image"></a>
                                 @endif
                             </div>
                             <div class="entry-title">
-                                <h2><a href="blog-single.html">{{$blog->title}}</a></h2>
+                                <h2><a href="{{route('front_blog_detail',['blog'=>$blog->id])}}">{{$blog->title}}</a></h2>
                             </div>
                             <div class="entry-meta">
                                 <ul>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="entry-content">
                                 <p>{{$blog->description}}</p>
-                                <a href="blog-single.html" class="more-link">Read More</a>
+                                <a href="{{route('front_blog_detail',['blog'=>$blog->id])}}" class="more-link">Read More</a>
                             </div>
                         </div>
                     </div>
