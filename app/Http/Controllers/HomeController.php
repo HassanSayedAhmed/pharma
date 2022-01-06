@@ -9,6 +9,9 @@ use App\category;
 use App\blog;
 use App\job;
 use Products;
+use App\JobWhatWeExpect;
+use App\JobRequirements;
+use App\JobApplicant;
 
 class HomeController extends Controller
 {
@@ -130,19 +133,38 @@ class HomeController extends Controller
     public function careersApply($id)
     {
         $job = job::find($id);
-        return view('front.home.careersApply',compact('job'));
+        $jobRequirements = JobRequirements::where('job_id',$id)->get();
+        $whatWeExpects = JobWhatWeExpect::where('job_id',$id)->get();
+
+        return view('front.home.careersApply',compact('job','jobRequirements','whatWeExpects'));
     }
 
     public function careersApplyAr($id)
     {
         $job = job::find($id);
-        return view('front.home.careersApply_ar',compact('job'));
+        $jobRequirements = JobRequirements::where('job_id',$id)->get();
+        $whatWeExpects = JobWhatWeExpect::where('job_id',$id)->get();
+
+        return view('front.home.careersApply_ar',compact('job','jobRequirements','whatWeExpects'));
     }
 
     public function careersApplyToJob(Request $request)
     {
-        dd($request);
-        return redirect('front_careers');
+        
+        $jobApplicant = new JobApplicant();
+        $jobApplicant->first_name = $request->first_name;
+        $jobApplicant->last_name = $request->last_name;
+        $jobApplicant->email = $request->email;
+        $jobApplicant->age = $request->template_jobform_age;
+        $jobApplicant->city = $request->template_jobform_city;
+        $jobApplicant->expected_salary = $request->template_jobform_salary;
+        $jobApplicant->start_date = $request->template_jobform_start;
+        $jobApplicant->experience = $request->experiencee;
+        $jobApplicant->application = $request->application;
+        $jobApplicant->job_id = $request->job_id;
+        $jobApplicant->save();
+      
+        return redirect(route('front_careers'));
     }
 
     public function contactus()

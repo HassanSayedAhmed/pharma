@@ -28,6 +28,55 @@
                     </div>
 
                     <p>{{$job->description}}</p>
+
+                    <div class="accordion accordion-bg">
+
+                        <div class="accordion-header">
+                            <div class="accordion-icon">
+                                <i class="accordion-closed icon-ok-circle"></i>
+                                <i class="accordion-open icon-remove-circle"></i>
+                            </div>
+                            <div class="accordion-title">
+                                Requirements
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="iconlist iconlist-color mb-0">
+                                @foreach ($jobRequirements as $jobRequirement)
+                                <li><i class="icon-ok"></i>{{$jobRequirement->name}}</li>
+                                @endforeach
+                                
+                            </ul>
+                        </div>
+
+                        <div class="accordion-header">
+                            <div class="accordion-icon">
+                                <i class="accordion-closed icon-ok-circle"></i>
+                                <i class="accordion-open icon-remove-circle"></i>
+                            </div>
+                            <div class="accordion-title">
+                                What we Expect from you?
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="iconlist iconlist-color mb-0">
+                                @foreach ($whatWeExpects as $whatWeExpect)
+                                 <li><i class="icon-plus-sign"></i>{{$whatWeExpect->name}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <div class="accordion-header">
+                            <div class="accordion-icon">
+                                <i class="accordion-closed icon-ok-circle"></i>
+                                <i class="accordion-open icon-remove-circle"></i>
+                            </div>
+                            <div class="accordion-title">
+                                What you've got?
+                            </div>
+                        </div>
+                        <div class="accordion-content">{{$job->what_you_have_got}}</div>
+                    </div>
                 </div>
 
                 <div class="col-md-12">
@@ -40,50 +89,52 @@
                         <div class="form-result"></div>
 
                         <form action="{{route('front_apply_to_job')}}" id="template-jobform" name="template-jobform" class="row mb-0" method="post">
-
+                            
+                            {{ csrf_field() }}
                             <div class="form-process">
                                 <div class="css3-spinner">
                                     <div class="css3-spinner-scaler"></div>
                                 </div>
                             </div>
+                            <input type="hidden" id="job_id" name="job_id" value="{{$job->id}}" class="sm-form-control required" />
 
                             <div class="col-md-6 form-group">
                                 <label for="template-jobform-fname">First Name <small>*</small></label>
-                                <input type="text" id="template-jobform-fname" name="first_name" value="" class="sm-form-control required" />
+                                <input type="text" id="template_jobform_fname" name="first_name" value="" class="sm-form-control required" />
                             </div>
 
                             <div class="col-md-6 form-group">
                                 <label for="template-jobform-lname">Last Name <small>*</small></label>
-                                <input type="text" id="template-jobform-lname" name="last_name" value="" class="sm-form-control required" />
+                                <input type="text" id="template_jobform_lname" name="last_name" value="" class="sm-form-control required" />
                             </div>
 
                             <div class="w-100"></div>
 
                             <div class="col-12 form-group">
                                 <label for="template-jobform-email">Email <small>*</small></label>
-                                <input type="email" id="template-jobform-email" name="email" value="" class="required email sm-form-control" />
+                                <input type="email" id="template_jobform_email" name="email" value="" class="required email sm-form-control" />
                             </div>
 
                             <div class="col-md-6 form-group">
                                 <label for="template-jobform-age">Age <small>*</small></label>
-                                <input type="text" name="template-jobform-age" id="age" value="" size="22" tabindex="4" class="sm-form-control required" />
+                                <input type="text" name="template_jobform_age" id="age" value="" size="22" tabindex="4" class="sm-form-control required" />
                             </div>
 
                             <div class="col-md-6 form-group">
                                 <label for="template-jobform-city">City <small>*</small></label>
-                                <input type="text" name="template-jobform-city" id="city" value="" size="22" tabindex="5" class="sm-form-control required" />
+                                <input type="text" name="template_jobform_city" id="city" value="" size="22" tabindex="5" class="sm-form-control required" />
                             </div>
 
                             <div class="w-100"></div>
 
                             <div class="col-md-6 form-group">
                                 <label for="template-jobform-salary">Expected Salary</label>
-                                <input type="text" name="template-jobform-salary" id="expected_salary" value="" size="22" tabindex="6" class="sm-form-control" />
+                                <input type="text" name="template_jobform_salary" id="expected_salary" value="" size="22" tabindex="6" class="sm-form-control" />
                             </div>
 
                             <div class="col-md-6 form-group">
                                 <label for="template-jobform-time">Start Date</label>
-                                <input type="date" name="template-jobform-start" id="start_date" value="" size="22" tabindex="7" class="sm-form-control" />
+                                <input type="date" name="template_jobform_start" id="start_date" value="" size="22" tabindex="7" class="sm-form-control" />
                             </div>
 
                             <div class="w-100"></div>

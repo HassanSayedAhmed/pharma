@@ -80,7 +80,7 @@ Route::get('/en/contactus','HomeController@contactus')->name('front_contactus');
 Route::get('/ar/contactus','HomeController@contactusAr')->name('front_contactus_ar');
 
 Route::get('/careers/apply/{id?}','HomeController@careersApply')->name('front_apply_career');
-Route::post('/careers/apply/to/job','HomeController@careersApplyToJob')->name('front_apply_to_job');
+Route::post('/careers/apply/to/job/app','HomeController@careersApplyToJob')->name('front_apply_to_job');
 
 
 
