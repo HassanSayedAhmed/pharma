@@ -36,9 +36,9 @@
                                         <div class="col-md-12 mb-md-0">
                                             <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="entry-image">
                                                 @if($product->image)
-                                                <img src="{{$product->image}}">
+                                                <img src="{{$product->image}}" />
                                                 @else 
-                                                <img src="{{asset('uploads/defaults/defualt_medicine.jpg')}}">
+                                                <img src="{{asset('uploads/defaults/defualt_medicine.jpg')}}" />
                                                 @endif
                                             </a>
                                         </div>
@@ -47,6 +47,7 @@
                                                 <h3 class="text-center"><a href="#">{{$product->name}}</a></h3>
                                             </div>
                                             <div class="entry-content">
+                                                <a href="#" class="btn btn-infoss btn-sm unique-btn">More</a>
                                                 <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="btn btn-dangerss btn-sm unique-btn2">WhatsApp</a>
                                             </div>
                                         </div>
@@ -66,10 +67,23 @@
                         <div class="widget widget-filter-links">
 
                             <h4>Select Category</h4>
-                            <ul class="custom-filter ps-2" data-container="#shop" data-active-class="active-filter">
-                                <li class="widget-filter-reset active-filter"><a href="#" data-filter="*">Clear</a></li>
+                            <ul>
+                                <li class="widget-filter-reset active-filter"><a href="{{route('front_products')}}" data-filter="*">Clear</a></li>
                                 @foreach($categories as $category)
-                                    <li><a href="#" data-filter=".sf-dress">{{$category->name}}</a></li>
+                                    <li>
+                                        <a href="{{route('front_products',['category'=>$category->id])}}" onMouseOver="this.style.color='#0000FF'" onMouseOut="this.style.color='#45433f'">
+                                                {{$category->name}}
+                                        </a>
+                                        @if ($category->subCategory)
+                                            <ul>
+                                                @foreach ($category->subCategory as $sub)
+                                                    <li><a href="{{route('front_products',['category'=>$sub->id])}}" onMouseOver="this.style.color='#0000FF'" onMouseOut="this.style.color='#45433f'">{{$sub->name}}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                        
+                                    </li>
+                                    
                                 @endforeach
                             </ul>
 

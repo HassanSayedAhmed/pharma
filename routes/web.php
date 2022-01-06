@@ -48,8 +48,8 @@ Route::get('/ar','HomeController@indexAr')->name('front_index_ar');
 Route::get('/en/aboutus','HomeController@aboutus')->name('front_about_us');
 Route::get('/ar/aboutus','HomeController@aboutusAr')->name('front_about_us_ar');
 
-Route::get('/en/products','HomeController@products')->name('front_products');
-Route::get('/ar/products','HomeController@productsAr')->name('front_products_ar');
+Route::get('/en/products/{category?}','HomeController@products')->name('front_products');
+Route::get('/ar/products/{category?}','HomeController@productsAr')->name('front_products_ar');
 
 Route::get('/en/blogs','HomeController@blogs')->name('front_blogs');
 Route::get('/ar/blogs','HomeController@blogsAr')->name('front_blogs_ar');

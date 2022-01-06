@@ -54,7 +54,6 @@ class ProductController extends Controller
             return $result;
         }
 
-        //$categories = category::pluck('name', 'id')->orderBy('id')->toArray();
         $categories = Category::select('id','name','description','image','parent_id','active')
             ->where('parent_id', null)->orderBy('id', 'desc');
           

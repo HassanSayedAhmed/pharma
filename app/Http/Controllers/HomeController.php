@@ -8,6 +8,7 @@ use App\product;
 use App\category;
 use App\blog;
 use App\job;
+use Products;
 
 class HomeController extends Controller
 {
@@ -30,17 +31,49 @@ class HomeController extends Controller
         return view('front.home.aboutus_ar');
     }
 
-    public function products()
+    public function products(Category $category=null)
     {
-        $products = product::get();
-        $categories = category::get();
+        $products = product::select('products.*');
+        if($category) {
+            $products->where('category_id',$category->id);
+        }
+        $products = $products->get();
+
+        $categories = Category::select('id','name','description','image','parent_id','active')
+            ->where('parent_id', null)->orderBy('id', 'desc');
+
+        $categories = $categories->paginate(Category::where('parent_id', null)->count('id'));
+      
+        $categories->getCollection()->transform(function ($value) {
+            
+            $value->subCategory = Category::where('parent_id',$value->id)->get();
+
+            return $value;
+        });
+
         return view('front.home.products',compact('products','categories'));
     }
 
-    public function productsAr()
+    public function productsAr(Category $category=null)
     {
-        $products = product::get();
-        $categories = category::get();
+        $products = product::select('products.*');
+        if($category) {
+            $products->where('category_id',$category->id);
+        }
+        $products = $products->get();
+
+        $categories = Category::select('id','name','description','image','parent_id','active')
+            ->where('parent_id', null)->orderBy('id', 'desc');
+
+        $categories = $categories->paginate(Category::where('parent_id', null)->count('id'));
+      
+        $categories->getCollection()->transform(function ($value) {
+            
+            $value->subCategory = Category::where('parent_id',$value->id)->get();
+
+            return $value;
+        });
+
         return view('front.home.products_ar',compact('products','categories'));
     }
 

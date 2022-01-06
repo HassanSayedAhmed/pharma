@@ -66,10 +66,23 @@
                         <div class="widget widget-filter-links">
 
                             <h4>اختر التصنيف</h4>
-                            <ul class="custom-filter ps-2" data-container="#shop" data-active-class="active-filter">
-                                <li class="widget-filter-reset active-filter"><a href="#" data-filter="*">Clear</a></li>
+                            <ul>
+                                <li class="widget-filter-reset active-filter"><a href="{{route('front_products')}}" data-filter="*">Clear</a></li>
                                 @foreach($categories as $category)
-                                    <li><a href="#" data-filter=".sf-dress">{{$category->name}}</a></li>
+                                    <li>
+                                        <a href="{{route('front_products',['category'=>$category->id])}}" onMouseOver="this.style.color='#0000FF'" onMouseOut="this.style.color='#45433f'">
+                                                {{$category->name}}
+                                        </a>
+                                        @if ($category->subCategory)
+                                            <ul>
+                                                @foreach ($category->subCategory as $sub)
+                                                    <li><a href="{{route('front_products',['category'=>$sub->id])}}" onMouseOver="this.style.color='#0000FF'" onMouseOut="this.style.color='#45433f'">{{$sub->name}}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                        
+                                    </li>
+                                    
                                 @endforeach
                             </ul>
 
