@@ -39,6 +39,16 @@ Route::get('/User/Index','UserController@index')->name('user_index');
 Route::post('/User/Save','UserController@save')->name('save_user');
 Route::get('/User/delete/{id?}','UserController@delete')->name('delete_user');
 
+Route::get('/careers/Index','CarrierController@index')->name('job_index');
+Route::post('/careers/Save','CarrierController@save')->name('save_job');
+Route::get('/careers/delete/{id?}','CarrierController@delete')->name('delete_job');
+
+Route::post('/requirement/save','CarrierController@saveRequirement')->name('save_requirement');
+Route::get('/requirement/delete/{id?}','CarrierController@deleteRequirement')->name('delete_requirement');
+
+Route::post('/whatWeExpect/save','CarrierController@saveWhatWeExpect')->name('save_what_we_expect');
+Route::get('/whatWeExpect/delete/{id?}','CarrierController@deleteWhatWeExpect')->name('delete_what_we_expect');
+
 Route::get('/Contact/Index','ContactController@index')->name('contact_index');
 
 //Front End Routes
@@ -65,7 +75,6 @@ Route::get('/ar/careers','HomeController@careersAr')->name('front_careers_ar');
 
 Route::get('/en/careers/apply/{id?}','HomeController@careersApply')->name('front_careers_apply');
 Route::get('/ar/careers/apply/{id?}','HomeController@careersApplyAr')->name('front_careers_apply_ar');
-
 
 Route::get('/en/contactus','HomeController@contactus')->name('front_contactus');
 Route::get('/ar/contactus','HomeController@contactusAr')->name('front_contactus_ar');

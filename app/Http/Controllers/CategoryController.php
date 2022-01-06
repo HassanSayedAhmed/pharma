@@ -8,6 +8,7 @@ use App\category;
 class CategoryController extends Controller
 {
     public function index(Request $request){
+
         if($request->ajax())
         {
             $draw = $request->draw;
@@ -86,6 +87,7 @@ class CategoryController extends Controller
 
     public function saveSub(Request $request)
     {
+        
         if($request->id == 0)
         {
             $category = new category();
