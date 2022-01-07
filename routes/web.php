@@ -83,6 +83,9 @@ Route::get('/ar/careers/apply/{id?}','HomeController@careersApplyAr')->name('fro
 Route::get('/en/contactus','HomeController@contactus')->name('front_contactus');
 Route::get('/ar/contactus','HomeController@contactusAr')->name('front_contactus_ar');
 
+Route::post('/contactus/save','HomeController@saveContactus')->name('front_contactus_save');
+
+
 Route::get('/careers/apply/{id?}','HomeController@careersApply')->name('front_apply_career');
 Route::post('/careers/apply/to/job/app','HomeController@careersApplyToJob')->name('front_apply_to_job');
 

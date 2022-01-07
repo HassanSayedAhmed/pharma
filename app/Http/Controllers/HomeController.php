@@ -176,5 +176,21 @@ class HomeController extends Controller
     {
         return view('front.home.contactus_ar');
     }
+
+    public function saveContactus(Request $request)
+    {
+        
+        $contact = new contact();
+        $contact->full_name = $request->name;
+        $contact->email = $request->email;
+        $contact->phone = $request->phone;
+        $contact->subject = $request->subject;
+        $contact->service = $request->service;
+        $contact->message = $request->message;
+
+        $contact->save();
+        
+        return redirect(route('front_contactus'));
+    }
    
 }
