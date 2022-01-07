@@ -51,6 +51,10 @@ Route::get('/whatWeExpect/delete/{id?}','CarrierController@deleteWhatWeExpect')-
 
 Route::get('/Contact/Index','ContactController@index')->name('contact_index');
 
+Route::get('/job/applicant/Index','JobApplicantController@index')->name('job_applicant_index');
+Route::post('/job/applicant/Save','JobApplicantController@save')->name('save_job_applicant');
+Route::get('/job/applicant/delete/{id?}','JobApplicantController@delete')->name('delete_job_applicant');
+
 //Front End Routes
 Route::get('/','HomeController@index')->name('front_index');
 Route::get('/ar','HomeController@indexAr')->name('front_index_ar');

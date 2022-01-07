@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use App\category;
+
 class CategoryController extends Controller
 {
     public function index(Request $request){
@@ -87,7 +88,7 @@ class CategoryController extends Controller
 
     public function saveSub(Request $request)
     {
-        
+
         if($request->id == 0)
         {
             $category = new category();
