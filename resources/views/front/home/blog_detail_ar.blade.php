@@ -35,7 +35,7 @@
                                 @endif
                             </div>
                             <div class="entry-title">
-                                <h2><a href="blog-single.html">{{$blog->title}}</a></h2>
+                                <h2><a href="blog-single.html">{{$blog->title_ar}}</a></h2>
                             </div>
                             <div class="entry-meta">
                                 <ul>
@@ -43,7 +43,7 @@
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>{{$blog->description}}</p>
+                                <p>{{$blog->description_ar}}</p>
                                 <a href="blog-single.html" class="more-link">اقرأ المزيد</a>
                             </div>
                         </div>

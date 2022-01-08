@@ -26,16 +26,9 @@ class ProductController extends Controller
                 return ($start / $length + 1);
             });
 
-            $query = product::select('products.id',
-            'products.name as product_name',
-            'products.type',
-            'products.image',
-            'products.category_id',
-            'categories.name as category_name',
-            'products.active')
+            $query = product::select('products.*','categories.name as category_name')
                 ->join('categories','products.category_id','categories.id')
                 ->orderBy($orderBy, $orderDir);
-
 
             if ($textSearch) {
               $textSearch = mb_ereg_replace(" ", "%", $textSearch);
@@ -75,6 +68,9 @@ class ProductController extends Controller
         {
             $product = new product();
             $product->name = $request->name;
+            $product->name_ar = $request->name_ar;
+            $product->description = $request->description;
+            $product->description_ar = $request->description_ar;
             $product->active = product::ACTIVE;
             $product->category_id = $request->category_id;
             if($request->has('image')){
@@ -89,6 +85,9 @@ class ProductController extends Controller
         {
             $product = product::find($request->id);
             $product->name = $request->name;
+            $product->name_ar = $request->name_ar;
+            $product->description = $request->description;
+            $product->description_ar = $request->description_ar;
             $product->category_id = $request->category_id;
             $product->type = $request->type;
             if($request->has('image')){

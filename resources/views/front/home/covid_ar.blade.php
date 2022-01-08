@@ -34,18 +34,18 @@
                                 <div class="entry event mb-3 col-lg-4">
                                     <div class="grid-inner row align-items-center g-0 p-4">
                                         <div class="col-md-12 mb-md-0">
-                                            <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="entry-image">
+                                            <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name_ar}} Available" class="entry-image">
                                                 @if($product->image)
                                                     <img src="{{$product->image}}" alt="{{$product->name}}">
                                                 @else
-                                                    <img src="{{asset('uplaods/defaults/defualt_medicine.jpg')}}" alt="{{$product->name}}">
+                                                    <img src="{{asset('uplaods/defaults/defualt_medicine.jpg')}}" alt="{{$product->name_ar}}">
                                                 @endif
                                             </a>
                                         </div>
                                         <div class="col-md-12">
                                            
                                             <div class="entry-content">
-                                                <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="btn btn-dangerss btn-sm unique-btn2">واتساب</a>
+                                                <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name_ar}} Available" class="btn btn-dangerss btn-sm unique-btn2">واتساب</a>
                                             </div>
                                         </div>
                                     </div>

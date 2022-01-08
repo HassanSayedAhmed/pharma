@@ -24,7 +24,7 @@ class BlogController extends Controller
                 return ($start / $length + 1);
             });
 
-            $query = blog::select('id','title','description','image','active')
+            $query = blog::select('blogs.*')
                 ->orderBy($orderBy, $orderDir);
 
 
@@ -54,7 +54,9 @@ class BlogController extends Controller
         {
             $blog = new blog();
             $blog->title = $request->title;
+            $blog->title_ar = $request->title_ar;
             $blog->description = $request->description;
+            $blog->description_ar = $request->description_ar;
             $blog->active = blog::ACTIVE;
             if($request->has('image')){
                 $file = $request->file('image');
@@ -68,7 +70,9 @@ class BlogController extends Controller
         {
             $blog = blog::find($request->id);
             $blog->title = $request->title;
+            $blog->title_ar = $request->title_ar;
             $blog->description = $request->description;
+            $blog->description_ar = $request->description_ar;
             if($request->has('image')){
                 $file = $request->file('image');
                 $blog->image = '/uploads/categories/'. $file->getClientOriginalName();

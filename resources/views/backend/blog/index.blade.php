@@ -20,11 +20,19 @@
                     <input type="hidden" id="id" name="id" value="0"/>
                     <div class="form-group">
                         <label>Title</label>
-                        <input required type="text" class="form-control" id="title" name="title" title="Name" placeholder="Name">
+                        <input required type="text" class="form-control" id="title" name="title" title="Title" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Title Arabic</label>
+                        <input required type="text" class="form-control" id="title_ar" name="title_ar" title="Title Arabic" placeholder="Title Arabic">
                     </div>
                     <div class="form-group">
                         <label>Description</label>
                         <input required type="text" class="form-control" id="description" name="description" title="Name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Description Arabic</label>
+                        <input required type="text" class="form-control" id="description_ar" name="description_ar" title="Description Arabic" placeholder="Description Arabic">
                     </div>
                     <div class="form-group">
                         <label>Image</label>
@@ -161,7 +169,9 @@
                 }, function (dialog) {
                         dialog.find('#id').val(data.id);
                         dialog.find('#title').val(data.title);
+                        dialog.find('#title_ar').val(data.title_ar);
                         dialog.find('#description').val(data.description);
+                        dialog.find('#description_ar').val(data.description_ar);
                   });
             });
 

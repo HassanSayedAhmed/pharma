@@ -26,7 +26,7 @@
             <card class="careers-card col-lg-4">
                 <div class="card-content-edit">
                     <h3>
-                            {{$job->title}} 
+                            {{$job->title_ar}} 
                     </h3>
                 </div>
                 <button>

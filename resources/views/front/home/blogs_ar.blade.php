@@ -35,7 +35,7 @@
                                 @endif
                             </div>
                             <div class="entry-title">
-                                <h2><a href="{{route('front_blog_detail_ar',['blog'=>$blog->id])}}">{{$blog->title}}</a></h2>
+                                <h2><a href="{{route('front_blog_detail_ar',['blog'=>$blog->id])}}">{{$blog->title_ar}}</a></h2>
                             </div>
                             <div class="entry-meta_ar">
                                 <ul>
@@ -43,7 +43,7 @@
                                 </ul>
                             </div>
                             <div class="entry-content">
-                                <p>{{$blog->description}}</p>
+                                <p>{{$blog->description_ar}}</p>
                                 <a href="{{route('front_blog_detail_ar',['blog'=>$blog->id])}}" class="more-link">اقرأ المزيد</a>
                             </div>
                         </div>

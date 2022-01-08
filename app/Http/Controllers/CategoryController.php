@@ -25,7 +25,7 @@ class CategoryController extends Controller
                 return ($start / $length + 1);
             });
 
-            $query = Category::select('id','name','description','image','parent_id','active')
+            $query = Category::select('categories.*')
             ->where('parent_id', null)->orderBy($orderBy, $orderDir);
 
 
@@ -62,6 +62,7 @@ class CategoryController extends Controller
         {
             $category = new category();
             $category->name = $request->name;
+            $category->name_ar = $request->name_ar;
             $category->active = category::ACTIVE;
             if($request->has('image')){
                 $file = $request->file('image');
@@ -75,6 +76,7 @@ class CategoryController extends Controller
         {
             $category = category::find($request->id);
             $category->name = $request->name;
+            $category->name_ar = $request->name_ar;
             if($request->has('image')){
                 $file = $request->file('image');
                 $category->image = '/uploads/categories/'. $file->getClientOriginalName();
@@ -93,6 +95,7 @@ class CategoryController extends Controller
         {
             $category = new category();
             $category->name = $request->name;
+            $category->name_ar = $request->name_ar;
             $category->active = category::ACTIVE;
             $category->parent_id = $request->parent_id;
             if($request->has('image')) {
@@ -107,6 +110,7 @@ class CategoryController extends Controller
         {
             $category = category::find($request->id);
             $category->name = $request->name;
+            $category->name_ar = $request->name_ar;
             $category->parent_id = $request->parent_id;
             if($request->has('image')){
                 $file = $request->file('image');

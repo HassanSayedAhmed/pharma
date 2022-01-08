@@ -23,6 +23,18 @@
                         <input required type="text" class="form-control" id="name" name="name" title="Name" placeholder="Name">
                     </div>
                     <div class="form-group">
+                        <label>Name Arabic</label>
+                        <input required type="text" class="form-control" id="name_ar" name="name_ar" title="Name Arabic" placeholder="Name Arabic">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input required type="text" class="form-control" id="description" name="description" title="Description" placeholder="Description">
+                    </div>
+                    <div class="form-group">
+                        <label>Description Arabic</label>
+                        <input required type="text" class="form-control" id="description_ar" name="description_ar" title="Description Arabic" placeholder="Description Arabic">
+                    </div>
+                    <div class="form-group">
                         <label>Image</label>
                         <input type="file" class="form-control" id="image" name="image" title="Image">
                     </div>
@@ -97,7 +109,7 @@
                     },
                     "columns": [
                         { "data": "id", "name": "id"},
-                        { "data": "product_name", "name": "product_name"},
+                        { "data": "name", "name": "name"},
                         { "data": "category_name", "name": "category_name"},
                         { "data": "type", "name": "type" ,
                             fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
@@ -185,7 +197,10 @@
 
                 }, function (dialog) {
                         dialog.find('#id').val(data.id);
-                        dialog.find('#name').val(data.product_name);
+                        dialog.find('#name').val(data.name);
+                        dialog.find('#name_ar').val(data.name_ar);
+                        dialog.find('#description').val(data.description);
+                        dialog.find('#description_ar').val(data.description_ar);
                         dialog.find('#category_id option[value=' + data.category_id + ']').attr('selected', 'selected');
                         dialog.find('#type option[value=' + data.type + ']').attr('selected', 'selected');
                     });
@@ -196,7 +211,7 @@
                 var url = '{{route('delete_product',['id'=>'#id'])}}';
                 url = url.replace('#id',data.id);
                 
-                warningBox("Are you sure to delete " + data.product_name +"</b>?", function () {
+                warningBox("Are you sure to delete " + data.name +"</b>?", function () {
                     $.ajax({
                         type: "GET",
                         url: url,

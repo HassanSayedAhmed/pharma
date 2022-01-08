@@ -23,12 +23,24 @@
                         <input required type="text" class="form-control" id="title" name="title" title="Title" placeholder="Title">
                     </div>
                     <div class="form-group">
+                        <label>Title Arabic</label>
+                        <input required type="text" class="form-control" id="title_ar" name="title_ar" title="Title Arabic" placeholder="Title Arabic">
+                    </div>
+                    <div class="form-group">
                         <label>Description</label>
                         <textarea id="description" name="description" title="Description" placeholder="Description" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
+                        <label>Description Arabic</label>
+                        <textarea id="description_ar" name="description_ar" title="Description Arabic" placeholder="Description Arabic" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
                         <label>What You Have Got</label>
                         <textarea id="what_you_have_got" name="what_you_have_got" title="What You Have Got" placeholder="What You Have Got" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>What You Have Got Arabic</label>
+                        <textarea id="what_you_have_got_ar" name="what_you_have_got_ar" title="What You Have Got Arabic" placeholder="What You Have Got Arabic" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Active</label>
@@ -67,6 +79,10 @@
                     <div class="form-group">
                         <label>Name</label>
                         <input required type="text" class="form-control" id="name" name="name" title="Name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Name Arabic</label>
+                        <input required type="text" class="form-control" id="name_ar" name="name_ar" title="Name Arabic" placeholder="Name Arabic">
                     </div>
                 </div>
                 <div>
@@ -131,8 +147,8 @@
                                oData.requirements.forEach(function(value) {
                                     console.log(value)
                                     html += value.name + '&nbsp;';
-                                    html += "<a title='Edit Requirement' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' class='editRequirement'><i class='fa fa-edit'></i></a>&nbsp;|&nbsp;";
-                                    html += "<a title='Delete Requirement' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' class='deleteRequirement'><i class='fa fa-trash'></i></a>";
+                                    html += "<a title='Edit Requirement' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' data-name-ar='"+value.name_ar+"' class='editRequirement'><i class='fa fa-edit'></i></a>&nbsp;|&nbsp;";
+                                    html += "<a title='Delete Requirement' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' data-name='"+value.name_ar+"' class='deleteRequirement'><i class='fa fa-trash'></i></a>";
                                     html += "<br>";
                                });
                                 $(nTd).html(html);
@@ -145,8 +161,8 @@
                                oData.whatWeExpect.forEach(function(value) {
                                     console.log(value)
                                     html += value.name + '&nbsp;';
-                                    html += "<a title='Edit whatWeExpect' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' class='editWhatWeExpect'><i class='fa fa-edit'></i></a>&nbsp;|&nbsp;";
-                                    html += "<a title='Delete whatWeExpect' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' class='deleteWhatWeExpect'><i class='fa fa-trash'></i></a>";
+                                    html += "<a title='Edit whatWeExpect' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' data-name-ar='"+value.name_ar+"' class='editWhatWeExpect'><i class='fa fa-edit'></i></a>&nbsp;|&nbsp;";
+                                    html += "<a title='Delete whatWeExpect' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' data-name='"+value.name_ar+"' class='deleteWhatWeExpect'><i class='fa fa-trash'></i></a>";
                                     html += "<br>";
                                });
                                 $(nTd).html(html);
@@ -233,6 +249,9 @@
                         dialog.find('#title').val(data.title);
                         dialog.find('#description').val(data.description);
                         dialog.find('#what_you_have_got').val(data.what_you_have_got);
+                        dialog.find('#title_ar').val(data.title_ar);
+                        dialog.find('#description_ar').val(data.description_ar);
+                        dialog.find('#what_you_have_got_ar').val(data.what_you_have_got_ar);
                         dialog.find('#active option[value='+data.active+']').attr('selected', 'selected');
 
                   });
@@ -285,6 +304,7 @@
                 var data = table.row($(this).closest('tr')).data();
                 var id = $(this).attr('data-id');
                 var name = $(this).attr('data-name');
+                var name_ar = $(this).attr('data-name-ar');
                 var modal = $('#manage_job_data_modal').clone();
                 var action = '{{route('save_requirement')}}';
                 modal.find('form').attr('action', action);
@@ -300,6 +320,7 @@
                 }, function (dialog) {
                         dialog.find('#id').val(id);
                         dialog.find('#name').val(name);
+                        dialog.find('#name_ar').val(name_ar);
                         dialog.find('#job_id').val(data.id)
 
                 });
@@ -331,6 +352,7 @@
                 var data = table.row($(this).closest('tr')).data();
                 var id = $(this).attr('data-id');
                 var name = $(this).attr('data-name');
+                var name_ar = $(this).attr('data-name-ar');
                 var modal = $('#manage_job_data_modal').clone();
                 var action = '{{route('save_what_we_expect')}}';
                 modal.find('form').attr('action', action);
@@ -346,6 +368,7 @@
                 }, function (dialog) {
                         dialog.find('#id').val(id);
                         dialog.find('#name').val(name);
+                        dialog.find('#name').val(name_ar);
                         dialog.find('#job_id').val(data.id)
 
                 });

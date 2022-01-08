@@ -34,7 +34,7 @@
                                 <div class="entry event mb-3 col-lg-4">
                                     <div class="grid-inner row align-items-center g-0 p-4">
                                         <div class="col-md-12 mb-md-0">
-                                            <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="entry-image">
+                                            <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name_ar}} Available" class="entry-image">
                                                 @if($product->image)
                                                 <img src="{{$product->image}}">
                                                 @else 
@@ -44,10 +44,15 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="entry-title title-xs">
-                                                <h3 class="text-center"><a href="{{route('front_product_detail_ar',['product'=>$product->id])}}">{{$product->name}}</a></h3>
+                                                <h3 class="text-center"><a href="{{route('front_product_detail_ar',['product'=>$product->id])}}">{{$product->name_ar}}</a></h3>
                                             </div>
                                             <div class="entry-content">
+<<<<<<< Updated upstream
                                                 <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="btn btn-dangerss btn-sm unique-btn2">واتساب</a>
+=======
+                                                <a href="{{route('front_product_detail_ar',['product'=>$product->id])}}" class="btn btn-infoss btn-sm unique-btn">المزيد</a>
+                                                <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name_ar}} Available" class="btn btn-dangerss btn-sm unique-btn2">WhatsApp</a>
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     </div>

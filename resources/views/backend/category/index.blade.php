@@ -24,8 +24,12 @@
                         <input required type="text" class="form-control" id="name" name="name" title="Name" placeholder="Name">
                     </div>
                     <div class="form-group">
+                        <label>Name Arabic</label>
+                        <input required type="text" class="form-control" id="name_ar" name="name_ar" title="Name Arabic" placeholder="Name Arabic">
+                    </div>
+                    <div class="form-group">
                         <label>Image</label>
-                        <input type="file" class="form-control" id="image" name="image" title="Name" placeholder="Name">
+                        <input type="file" class="form-control" id="image" name="image" title="Image" placeholder="Image">
                     </div>
                     
                 </div>
@@ -86,7 +90,7 @@
                                oData.subCategory.forEach(function(value) {
                                     console.log(value)
                                     html += value.name + '&nbsp;';
-                                    html += "<a title='Edit Sub Category' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' class='editSub'><i class='fa fa-edit'></i></a>&nbsp;|&nbsp;";
+                                    html += "<a title='Edit Sub Category' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' data-name-ar='"+value.name_ar+"' class='editSub'><i class='fa fa-edit'></i></a>&nbsp;|&nbsp;";
                                     html += "<a title='Delete Sub Category' href='javascript:void(0)' data-id='"+value.id+"' data-name='"+value.name+"' class='deleteSub'><i class='fa fa-trash'></i></a>";
                                     html += "<br>";
                                });
@@ -173,6 +177,7 @@
                 }, function (dialog) {
                         dialog.find('#id').val(data.id);
                         dialog.find('#name').val(data.name);
+                        dialog.find('#name_ar').val(data.name_ar);
                   });
             });
 
@@ -223,6 +228,7 @@
                 var data = table.row($(this).closest('tr')).data();
                 var id = $(this).attr('data-id');
                 var name = $(this).attr('data-name');
+                var name_ar = $(this).attr('data-name-ar');
                 var modal = $('#manage_category_modal').clone();
                 var action = '{{route('save_sub_category')}}';
                 modal.find('form').attr('action', action);
@@ -238,6 +244,7 @@
                 }, function (dialog) {
                         dialog.find('#id').val(id);
                         dialog.find('#name').val(name);
+                        dialog.find('#name_ar').val(name_ar);
                         dialog.find('#parent_id').val(data.id)
 
                 });
