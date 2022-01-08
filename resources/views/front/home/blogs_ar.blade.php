@@ -37,7 +37,7 @@
                             <div class="entry-title">
                                 <h2><a href="{{route('front_blog_detail_ar',['blog'=>$blog->id])}}">{{$blog->title}}</a></h2>
                             </div>
-                            <div class="entry-meta">
+                            <div class="entry-meta_ar">
                                 <ul>
                                     <li><i class="icon-calendar3"></i> {{$blog->created_at}}</li>
                                 </ul>

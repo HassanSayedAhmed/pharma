@@ -7735,7 +7735,11 @@ body:not(.device-touch) .portfolio {
 	margin: 0 15px 10px 0;
 	color: #999;
 }
-
+.entry-meta_ar li {
+	font-size: 90%;
+	margin: 0 0px 10px 0;
+	color: #999;
+}
 .entry-meta ul.flex-column li {
 	margin-left: 0;
 }
@@ -8013,13 +8017,12 @@ body:not(.device-touch) .entry-link {
 
 .more-link {
 	display: inline-block;
-	border-bottom: 1px solid #203e7b;
 	padding: 0 2px;
 	font-family: 'PT Serif', serif;
-	font-style: italic;
+	color: black;
 }
 
-.more-link:hover { border-bottom-color: #555; }
+.more-link:hover { color: #203e7b; }
 
 .post-navigation + .line { margin-top: 50px; }
 
