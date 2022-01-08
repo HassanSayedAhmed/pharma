@@ -596,7 +596,9 @@
 									<textarea class="required form-control input-block-level short-textarea" id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30" placeholder="رسالتك"></textarea>
 									<input type="text" class="d-none" id="quick-contact-form-botcheck" name="quick-contact-form-botcheck" value="" />
 									<input type="hidden" name="prefix" value="quick-contact-form-">
-									<button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="btn btn-outline btn-roundeded" style="background-color: #273b76;color: #FFF;" value="ارسل">Send Email</button>
+									<button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="btn btn-outline btn-roundeded" style="background-color: #273b76;color: #FFF;" value="ارسل">
+									ارسل بريد الكترونى
+								</button>
 
 								</form>
 
