@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.front_ar')
 @section('css')
     
 @endsection
@@ -9,9 +9,9 @@
 		<section id="page-title" class="pg-title-fix">
 
 			<div class="container clearfix">
-				<h1>Blogs</h1>
-				<span class="breadcrumb">
-					Our Latest News in Grid Layout
+				<h1>المدونات</h1>
+				<span class="breadcrumb_ar">
+					هنا أحدث الأخبار
 				</span>
 			</div>
 
@@ -87,7 +87,7 @@
                                             <div class="entry-title title-xs nott">
                                                 <h3><a href="{{route('front_blog_detail',['blog'=>$relatedBlog->id])}}">{{$relatedBlog->title_ar}}</a></h3>
                                             </div>
-                                            <div class="entry-meta">
+                                            <div class="entry-meta_ar">
                                                 <ul>
                                                     <li><i class="icon-calendar3"></i> {{$relatedBlog->created_at}}</li>
                                                     {{-- <li><a href="#"><i class="icon-comments"></i> 12</a></li> --}}
