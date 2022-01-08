@@ -28,6 +28,54 @@
                     </div>
 
                     <p>{{$job->description_ar}}</p>
+                    <div class="accordion accordion-bg">
+
+                        <div class="accordion-header">
+                            <div class="accordion-icon">
+                                <i class="accordion-closed icon-ok-circle"></i>
+                                <i class="accordion-open icon-remove-circle"></i>
+                            </div>
+                            <div class="accordion-title">
+                                Requirements
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="iconlist iconlist-color mb-0">
+                                @foreach ($jobRequirements as $jobRequirement)
+                                <li><i class="icon-ok"></i>{{$jobRequirement->name_ar}}</li>
+                                @endforeach
+                                
+                            </ul>
+                        </div>
+
+                        <div class="accordion-header">
+                            <div class="accordion-icon">
+                                <i class="accordion-closed icon-ok-circle"></i>
+                                <i class="accordion-open icon-remove-circle"></i>
+                            </div>
+                            <div class="accordion-title">
+                                What we Expect from you?
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <ul class="iconlist iconlist-color mb-0">
+                                @foreach ($whatWeExpects as $whatWeExpect)
+                                 <li><i class="icon-plus-sign"></i>{{$whatWeExpect->name_ar}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <div class="accordion-header">
+                            <div class="accordion-icon">
+                                <i class="accordion-closed icon-ok-circle"></i>
+                                <i class="accordion-open icon-remove-circle"></i>
+                            </div>
+                            <div class="accordion-title">
+                                What you've got?
+                            </div>
+                        </div>
+                        <div class="accordion-content">{{$job->what_you_have_got_ar}}</div>
+                    </div>
                 </div>
 
                 <div class="col-md-12">
