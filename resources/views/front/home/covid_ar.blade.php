@@ -43,9 +43,12 @@
                                             </a>
                                         </div>
                                         <div class="col-md-12">
-                                           
+                                        <div class="entry-title title-xs">
+                                                <h3 class="text-center"><a href="{{route('front_product_detail',['product'=>$product->id])}}">{{$product->name}}</a></h3>
+                                            </div>
                                             <div class="entry-content">
-                                                <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name_ar}} Available" class="btn btn-dangerss btn-sm unique-btn2">واتساب</a>
+                                                <a href="{{route('front_product_detail',['product'=>$product->id])}}" class="btn btn-infoss btn-sm unique-btn">المزيد</a>
+                                                <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="btn btn-dangerss btn-sm unique-btn2">واتساب</a>
                                             </div>
                                         </div>
                                     </div>
