@@ -24,10 +24,10 @@
             <div class="row col-mb-50">
                 <div class="col-md-12">
                     <div class="fancy-title title-bottom-border">
-                        <h3>{{$job->title}}</h3>
+                        <h3>{{$job->title_ar}}</h3>
                     </div>
 
-                    <p>{{$job->description}}</p>
+                    <p>{{$job->description_ar}}</p>
                 </div>
 
                 <div class="col-md-12">

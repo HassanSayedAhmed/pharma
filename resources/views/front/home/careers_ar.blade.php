@@ -30,7 +30,7 @@
                     </h3>
                 </div>
                 <button>
-                    <a href="{{route('front_apply_career',['id'=>$job->id])}}">للمزيد من التفاصيل</a>
+                    <a href="{{route('front_careers_apply_ar',['id'=>$job->id])}}">للمزيد من التفاصيل</a>
                 </button>
             </card>
             @endforeach
