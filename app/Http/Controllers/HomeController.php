@@ -80,6 +80,16 @@ class HomeController extends Controller
         return view('front.home.products_ar',compact('products','categories'));
     }
 
+    public function productDetail(Product $product)
+    {
+        return view('front.home.product_detail',compact('product'));
+    }
+
+    public function productDetailAr(Product $product)
+    {
+        return view('front.home.product_detail_ar',compact('product'));
+    }
+
     public function blogs()
     {
         $blogs = blog::get();
@@ -175,6 +185,22 @@ class HomeController extends Controller
     public function contactusAr()
     {
         return view('front.home.contactus_ar');
+    }
+
+    public function saveContactus(Request $request)
+    {
+        
+        $contact = new contact();
+        $contact->full_name = $request->name;
+        $contact->email = $request->email;
+        $contact->phone = $request->phone;
+        $contact->subject = $request->subject;
+        $contact->service = $request->service;
+        $contact->message = $request->message;
+
+        $contact->save();
+        
+        return redirect(route('front_contactus'));
     }
    
 }

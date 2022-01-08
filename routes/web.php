@@ -51,6 +51,10 @@ Route::get('/whatWeExpect/delete/{id?}','CarrierController@deleteWhatWeExpect')-
 
 Route::get('/Contact/Index','ContactController@index')->name('contact_index');
 
+Route::get('/job/applicant/Index','JobApplicantController@index')->name('job_applicant_index');
+Route::post('/job/applicant/Save','JobApplicantController@save')->name('save_job_applicant');
+Route::get('/job/applicant/delete/{id?}','JobApplicantController@delete')->name('delete_job_applicant');
+
 //Front End Routes
 Route::get('/','HomeController@index')->name('front_index');
 Route::get('/ar','HomeController@indexAr')->name('front_index_ar');
@@ -60,6 +64,9 @@ Route::get('/ar/aboutus','HomeController@aboutusAr')->name('front_about_us_ar');
 
 Route::get('/en/products/{category?}','HomeController@products')->name('front_products');
 Route::get('/ar/products/{category?}','HomeController@productsAr')->name('front_products_ar');
+
+Route::get('/en/product/detail/{product?}','HomeController@productDetail')->name('front_product_detail');
+Route::get('/ar/product/detail/{product?}','HomeController@productDetailAr')->name('front_product_detail_ar');
 
 Route::get('/en/blogs','HomeController@blogs')->name('front_blogs');
 Route::get('/ar/blogs','HomeController@blogsAr')->name('front_blogs_ar');
@@ -78,6 +85,9 @@ Route::get('/ar/careers/apply/{id?}','HomeController@careersApplyAr')->name('fro
 
 Route::get('/en/contactus','HomeController@contactus')->name('front_contactus');
 Route::get('/ar/contactus','HomeController@contactusAr')->name('front_contactus_ar');
+
+Route::post('/contactus/save','HomeController@saveContactus')->name('front_contactus_save');
+
 
 Route::get('/careers/apply/{id?}','HomeController@careersApply')->name('front_apply_career');
 Route::post('/careers/apply/to/job/app','HomeController@careersApplyToJob')->name('front_apply_to_job');

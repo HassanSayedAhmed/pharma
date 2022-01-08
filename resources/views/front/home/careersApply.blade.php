@@ -88,7 +88,7 @@
                     <div class="form-widget">
                         <div class="form-result"></div>
 
-                        <form action="{{route('front_apply_to_job')}}" id="template-jobform" name="template-jobform" class="row mb-0" method="post">
+                        <form action="{{route('front_apply_to_job')}}" class="row mb-0" method="post">
                             
                             {{ csrf_field() }}
                             <div class="form-process">
@@ -138,8 +138,6 @@
                             </div>
 
                             <div class="w-100"></div>
-
-                        
 
                             <div class="col-12 form-group">
                                 <label for="experience">Experience (optional)</label>

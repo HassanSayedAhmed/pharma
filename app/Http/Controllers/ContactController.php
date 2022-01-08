@@ -24,7 +24,7 @@ class ContactController extends Controller
                 return ($start / $length + 1);
             });
 
-            $query = contact::select('id','full_name','email','phone','subject','message')
+            $query = contact::select('contacts.*')
                 ->orderBy($orderBy, $orderDir);
 
 
