@@ -36,7 +36,7 @@
                                 <i class="accordion-open icon-remove-circle"></i>
                             </div>
                             <div class="accordion-title">
-                                Requirements
+                                المتطلبات
                             </div>
                         </div>
                         <div class="accordion-content">
@@ -54,7 +54,7 @@
                                 <i class="accordion-open icon-remove-circle"></i>
                             </div>
                             <div class="accordion-title">
-                                What we Expect from you?
+                                ماذا نتوقع منك؟
                             </div>
                         </div>
                         <div class="accordion-content">
@@ -71,7 +71,7 @@
                                 <i class="accordion-open icon-remove-circle"></i>
                             </div>
                             <div class="accordion-title">
-                                What you've got?
+                                ما يهمنا أن يكون لديك ؟
                             </div>
                         </div>
                         <div class="accordion-content">{{$job->what_you_have_got_ar}}</div>

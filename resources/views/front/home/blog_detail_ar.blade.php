@@ -68,7 +68,9 @@
 							</div>
 						</div><!-- .entry end -->
 					
-						<h4>Related Posts:</h4>
+						<h4>
+							منشورات مثيلة:
+						</h4>
 
 						<div class="related-posts row posts-md col-mb-30">
                             @foreach ($relatedBlogs as $relatedBlog)
