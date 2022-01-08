@@ -47,12 +47,7 @@
                                                 <h3 class="text-center"><a href="{{route('front_product_detail_ar',['product'=>$product->id])}}">{{$product->name}}</a></h3>
                                             </div>
                                             <div class="entry-content">
-<<<<<<< HEAD
                                                 <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="btn btn-dangerss btn-sm unique-btn2">واتساب</a>
-=======
-                                                <a href="{{route('front_product_detail_ar',['product'=>$product->id])}}" class="btn btn-infoss btn-sm unique-btn">المزيد</a>
-                                                <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="btn btn-dangerss btn-sm unique-btn2">WhatsApp</a>
->>>>>>> 27060699cb03a8a0db9dd22043b10e2948329ac6
                                             </div>
                                         </div>
                                     </div>
