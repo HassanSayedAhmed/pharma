@@ -47,7 +47,7 @@
                                                 <h3 class="text-center"><a href="#">{{$product->name}}</a></h3>
                                             </div>
                                             <div class="entry-content">
-                                                <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="btn btn-dangerss btn-sm unique-btn2">WhatsApp</a>
+                                                <a href="https://api.whatsapp.com/send/?phone=%2B201551364964&text={{$product->name}} Available" class="btn btn-dangerss btn-sm unique-btn2">واتساب</a>
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +67,7 @@
 
                             <h4>اختر التصنيف</h4>
                             <ul>
-                                <li class="widget-filter-reset active-filter"><a href="{{route('front_products')}}" data-filter="*">Clear</a></li>
+                                <li class="widget-filter-reset active-filter"><a href="{{route('front_products')}}" data-filter="*">احذف</a></li>
                                 @foreach($categories as $category)
                                     <li>
                                         <a href="{{route('front_products',['category'=>$category->id])}}" onMouseOver="this.style.color='#0000FF'" onMouseOut="this.style.color='#45433f'">
