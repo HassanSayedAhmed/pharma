@@ -105,7 +105,7 @@ class CarrierController extends Controller
             $requirement->name = $request->name;
             $requirement->name_ar = $request->name_ar;
             $requirement->job_id = $request->job_id;
-            $requirement->active = 1;
+            //$requirement->active = 1;
             
             $requirement->save();
         }
@@ -115,7 +115,7 @@ class CarrierController extends Controller
             $requirement->name = $request->name;
             $requirement->name_ar = $request->name_ar;
             $requirement->job_id = $request->job_id;
-            $requirement->active = 1;
+            //$requirement->active = 1;
             
             $requirement->save();
         }
@@ -135,9 +135,9 @@ class CarrierController extends Controller
         {
             $whatWeExpect = new JobWhatWeExpect();
             $whatWeExpect->name = $request->name;
-            $requirement->name_ar = $request->name_ar;
+            $whatWeExpect->name_ar = $request->name_ar;
             $whatWeExpect->job_id = $request->job_id;
-            $whatWeExpect->active = 1;
+            //$whatWeExpect->active = 1;
             
             $whatWeExpect->save();
         }
@@ -145,9 +145,9 @@ class CarrierController extends Controller
         {
             $whatWeExpect = JobWhatWeExpect::find($request->id);
             $whatWeExpect->name = $request->name;
-            $requirement->name_ar = $request->name_ar;
+            $whatWeExpect->name_ar = $request->name_ar;
             $whatWeExpect->job_id = $request->job_id;
-            $whatWeExpect->active = 1;
+            //$whatWeExpect->active = 1;
             
             $whatWeExpect->save();
         }
