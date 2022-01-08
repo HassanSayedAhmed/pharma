@@ -80,6 +80,16 @@ class HomeController extends Controller
         return view('front.home.products_ar',compact('products','categories'));
     }
 
+    public function productDetail(Product $product)
+    {
+        return view('front.home.product_detail',compact('product'));
+    }
+
+    public function productDetailAr(Product $product)
+    {
+        return view('front.home.product_detail_ar',compact('product'));
+    }
+
     public function blogs()
     {
         $blogs = blog::get();

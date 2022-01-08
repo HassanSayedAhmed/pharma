@@ -65,6 +65,9 @@ Route::get('/ar/aboutus','HomeController@aboutusAr')->name('front_about_us_ar');
 Route::get('/en/products/{category?}','HomeController@products')->name('front_products');
 Route::get('/ar/products/{category?}','HomeController@productsAr')->name('front_products_ar');
 
+Route::get('/en/product/detail/{product?}','HomeController@productDetail')->name('front_product_detail');
+Route::get('/ar/product/detail/{product?}','HomeController@productDetailAr')->name('front_product_detail_ar');
+
 Route::get('/en/blogs','HomeController@blogs')->name('front_blogs');
 Route::get('/ar/blogs','HomeController@blogsAr')->name('front_blogs_ar');
 
