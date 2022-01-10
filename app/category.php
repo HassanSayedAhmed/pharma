@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class category extends Model
+class Category extends Model
 {
-    const ACTIVE = 1;
-    const INACTIVE = 0;
+    use SoftDeletes;
+    
 }
